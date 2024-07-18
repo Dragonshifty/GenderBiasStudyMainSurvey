@@ -34,7 +34,7 @@ public class Participant {
     private String mFO0;
     private String mFO1;
     private String mFO2;
-    private String mF03;
+    private String mFO3;
     private String mFO4;
     private String mFO5;
     private String mT0;
@@ -387,12 +387,12 @@ public class Participant {
         this.mFO2 = mFO2;
     }
 
-    public String getmF03() {
-        return mF03;
+    public String getmFO3() {
+        return mFO3;
     }
 
-    public void setmF03(String mF03) {
-        this.mF03 = mF03;
+    public void setmFO3(String mFO3) {
+        this.mFO3 = mFO3;
     }
 
     public String getmFO4() {

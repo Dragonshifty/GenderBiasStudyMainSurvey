@@ -54,7 +54,6 @@ public class CSVConverter {
         for (int i = 0; i < charArray.length; i++){
             stringBuilder.append(charArray[i]);
         }
-
         return stringBuilder.toString();
     }
 }
