@@ -12,7 +12,7 @@ public class Fine extends TrackStats {
                 venueSizeTotalML += Integer.parseInt(participant.getmF0());
                 festivalTotalML += Integer.parseInt(participant.getmF1());
                 ratingTotalML += Integer.parseInt(participant.getmF2());
-                otherPayTotalML += Integer.parseInt(participant.getmF3());
+                otherRatingTotalML += Integer.parseInt(participant.getmF3());
                 payTotalML += Integer.parseInt(participant.getmF4());
                 otherPayTotalML += Integer.parseInt(participant.getmF5());
 
@@ -22,7 +22,7 @@ public class Fine extends TrackStats {
             } else if (groupCode == 2){
                 femaleLedTotal++;
                 venueSizeTotalFL += Integer.parseInt(participant.getfF0());
-                festivalTotalML += Integer.parseInt(participant.getfF1());
+                festivalTotalFL += Integer.parseInt(participant.getfF1());
                 ratingTotalFL += Integer.parseInt(participant.getfF2());
                 otherRatingTotalFL += Integer.parseInt(participant.getfF3());
                 payTotalFL += Integer.parseInt(participant.getfF4());

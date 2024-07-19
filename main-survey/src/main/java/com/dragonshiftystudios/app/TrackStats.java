@@ -8,6 +8,11 @@ public abstract class TrackStats implements IGather {
     int maleLedTotal = 0;
     int femaleLedTotal = 0;
 
+    double malePreferred = 0;
+    double femalePreferred = 0;
+    double maleOtherPreferred = 0;
+    double femaleOtherPreferred = 0;
+
     double venueSize;
     double festivalPercent;
     double rating;
@@ -64,7 +69,7 @@ public abstract class TrackStats implements IGather {
         getStats();
         getMaleLed();
         getFemaleLed();
-        getTotals();
+        getMeanTotals();
     }
 
     protected abstract void getStats();
@@ -91,7 +96,7 @@ public abstract class TrackStats implements IGather {
         }
     }
 
-    private void getTotals(){
+    private void getMeanTotals(){
         int totalLed = maleLedTotal + femaleLedTotal;
 
         if (totalLed > 0) {
@@ -102,6 +107,10 @@ public abstract class TrackStats implements IGather {
             pay = ((payML * maleLedTotal) + (payFL * femaleLedTotal)) / totalLed;
             otherPay = ((otherPayML * maleLedTotal) + (otherPayFL * femaleLedTotal)) / totalLed;
         }
+    }
+
+    private void getTrackPreferences(){
+
     }
 
     public double getRating(){

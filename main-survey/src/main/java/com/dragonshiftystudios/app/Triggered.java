@@ -10,13 +10,13 @@ public class Triggered extends TrackStats {
                 venueSizeTotalML += Integer.parseInt(participant.getmT0());
                 festivalTotalML += Integer.parseInt(participant.getmT1());
                 ratingTotalML += Integer.parseInt(participant.getmT2());
-                otherPayTotalML += Integer.parseInt(participant.getmT3());
+                otherRatingTotalML += Integer.parseInt(participant.getmT3());
                 payTotalML += Integer.parseInt(participant.getmT4());
                 otherPayTotalML += Integer.parseInt(participant.getmT5());
             } else if (groupCode == 2){
                 femaleLedTotal++;
                 venueSizeTotalFL += Integer.parseInt(participant.getfT0());
-                festivalTotalML += Integer.parseInt(participant.getfT1());
+                festivalTotalFL += Integer.parseInt(participant.getfT1());
                 ratingTotalFL += Integer.parseInt(participant.getfT2());
                 otherRatingTotalFL += Integer.parseInt(participant.getfT3());
                 payTotalFL += Integer.parseInt(participant.getfT4());

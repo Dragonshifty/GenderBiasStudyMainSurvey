@@ -11,13 +11,13 @@ public class MyOwnExpectations extends TrackStats {
                 venueSizeTotalML += Integer.parseInt(participant.getmMOE0());
                 festivalTotalML += Integer.parseInt(participant.getmMOE1());
                 ratingTotalML += Integer.parseInt(participant.getmMOE2());
-                otherPayTotalML += Integer.parseInt(participant.getmMOE3());
+                otherRatingTotalML += Integer.parseInt(participant.getmMOE3());
                 payTotalML += Integer.parseInt(participant.getmMOE4());
                 otherPayTotalML += Integer.parseInt(participant.getmMOE5());
             } else if (groupCode == 2){
                 femaleLedTotal++;
                 venueSizeTotalFL += Integer.parseInt(participant.getfMOE0());
-                festivalTotalML += Integer.parseInt(participant.getfMOE1());
+                festivalTotalFL += Integer.parseInt(participant.getfMOE1());
                 ratingTotalFL += Integer.parseInt(participant.getfMOE2());
                 otherRatingTotalFL += Integer.parseInt(participant.getfMOE3());
                 payTotalFL += Integer.parseInt(participant.getfMOE4());

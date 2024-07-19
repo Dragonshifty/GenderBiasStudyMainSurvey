@@ -11,13 +11,13 @@ public class Rising extends TrackStats{
                 venueSizeTotalML += Integer.parseInt(participant.getmR0());
                 festivalTotalML += Integer.parseInt(participant.getmR1());
                 ratingTotalML += Integer.parseInt(participant.getmR2());
-                otherPayTotalML += Integer.parseInt(participant.getmR3());
+                otherRatingTotalML += Integer.parseInt(participant.getmR3());
                 payTotalML += Integer.parseInt(participant.getmR4());
                 otherPayTotalML += Integer.parseInt(participant.getmR5());
             } else if (groupCode == 2){
                 femaleLedTotal++;
                 venueSizeTotalFL += Integer.parseInt(participant.getfR0());
-                festivalTotalML += Integer.parseInt(participant.getfR1());
+                festivalTotalFL += Integer.parseInt(participant.getfR1());
                 ratingTotalFL += Integer.parseInt(participant.getfR2());
                 otherRatingTotalFL += Integer.parseInt(participant.getfR3());
                 payTotalFL += Integer.parseInt(participant.getfR4());

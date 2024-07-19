@@ -11,13 +11,13 @@ public class FlyOn extends TrackStats {
                 venueSizeTotalML += Integer.parseInt(participant.getmFO0());
                 festivalTotalML += Integer.parseInt(participant.getmFO1());
                 ratingTotalML += Integer.parseInt(participant.getmFO2());
-                otherPayTotalML += Integer.parseInt(participant.getmFO3());
+                otherRatingTotalML += Integer.parseInt(participant.getmFO3());
                 payTotalML += Integer.parseInt(participant.getmFO4());
                 otherPayTotalML += Integer.parseInt(participant.getmFO5());
             } else if (groupCode == 2){
                 femaleLedTotal++;
                 venueSizeTotalFL += Integer.parseInt(participant.getfFO0());
-                festivalTotalML += Integer.parseInt(participant.getfFO1());
+                festivalTotalFL += Integer.parseInt(participant.getfFO1());
                 ratingTotalFL += Integer.parseInt(participant.getfFO2());
                 otherRatingTotalFL += Integer.parseInt(participant.getfFO3());
                 payTotalFL += Integer.parseInt(participant.getfFO4());
