@@ -1,8 +1,12 @@
 package com.dragonshiftystudios.app;
 
 public class Clearly extends TrackStats {
+    
+
     @Override
     protected void getStats(){
+        trackName = "Clearly";
+
         for (Participant participant : participants){
             int groupCode = Integer.parseInt(participant.getGroup());
             
@@ -27,6 +31,11 @@ public class Clearly extends TrackStats {
                 otherRatingTotalFL += Integer.parseInt(participant.getfC3());
                 payTotalFL += Integer.parseInt(participant.getfC4());
                 otherPayTotalFL += Integer.parseInt(participant.getfC5());
+
+                malePreferred += (participant.getfPC0().equals("1")) ? 1 : 0;
+                femalePreferred += (participant.getfPC0().equals("0")) ? 1 : 0;
+                maleOtherPreferred += (participant.getfPC1().equals("1")) ? 1 :0;
+                femaleOtherPreferred += (participant.getfPC1().equals("0")) ? 1 :0;
             } else {
                 System.out.println("Not in group: " + participant.getResponseId());
             }

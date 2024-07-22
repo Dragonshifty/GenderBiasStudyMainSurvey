@@ -3,6 +3,8 @@ package com.dragonshiftystudios.app;
 public class Rising extends TrackStats{
     @Override
     protected void getStats(){
+        trackName = "Rising";
+        
         for (Participant participant : participants){
             int groupCode = Integer.parseInt(participant.getGroup());
             

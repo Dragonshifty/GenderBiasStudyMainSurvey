@@ -4,6 +4,8 @@ import java.util.LinkedList;
 public abstract class TrackStats implements IGather {
     LinkedList<Participant> participants = new LinkedList<>();
 
+    String trackName = "";
+
     int participantsTotal;
     int maleLedTotal = 0;
     int femaleLedTotal = 0;
@@ -115,5 +117,9 @@ public abstract class TrackStats implements IGather {
 
     public double getRating(){
         return rating;
+    }
+
+    public String getTrackName(){
+        return trackName;
     }
 }

@@ -3,6 +3,8 @@ package com.dragonshiftystudios.app;
 public class MyOne extends TrackStats {
     @Override
     protected void getStats(){
+        trackName = "My One";
+
         for (Participant participant : participants){
             int groupCode = Integer.parseInt(participant.getGroup());
             
@@ -14,6 +16,11 @@ public class MyOne extends TrackStats {
                 otherRatingTotalML += Integer.parseInt(participant.getmM3());
                 payTotalML += Integer.parseInt(participant.getmM4());
                 otherPayTotalML += Integer.parseInt(participant.getmM5());
+
+                malePreferred += (participant.getmPM0().equals("1")) ? 1 : 0;
+                femalePreferred += (participant.getmPM0().equals("0")) ? 1 : 0;
+                maleOtherPreferred += (participant.getmPM1().equals("1")) ? 1 :0;
+                femaleOtherPreferred += (participant.getmPM1().equals("0")) ? 1 :0;
             } else if (groupCode == 2){
                 femaleLedTotal++;
                 venueSizeTotalFL += Integer.parseInt(participant.getfM0());
@@ -22,6 +29,11 @@ public class MyOne extends TrackStats {
                 otherRatingTotalFL += Integer.parseInt(participant.getfM3());
                 payTotalFL += Integer.parseInt(participant.getfM4());
                 otherPayTotalFL += Integer.parseInt(participant.getfM5());
+
+                malePreferred += (participant.getfPM0().equals("1")) ? 1 : 0;
+                femalePreferred += (participant.getfPM0().equals("0")) ? 1 : 0;
+                maleOtherPreferred += (participant.getfPM1().equals("1")) ? 1 :0;
+                femaleOtherPreferred += (participant.getfPM1().equals("0")) ? 1 :0;
             } else {
                 System.out.println("Not in group: " + participant.getResponseId());
             }

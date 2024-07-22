@@ -2,6 +2,8 @@ package com.dragonshiftystudios.app;
 
 public class Triggered extends TrackStats {
     protected void getStats(){
+        trackName = "Triggered";
+
         for (Participant participant : participants){
             int groupCode = Integer.parseInt(participant.getGroup());
             
@@ -25,5 +27,5 @@ public class Triggered extends TrackStats {
                 System.out.println("Not in group: " + participant.getResponseId());
             }
         }
-    }
+    }  
 }

@@ -3,6 +3,8 @@ package com.dragonshiftystudios.app;
 public class DreamWistfully extends TrackStats {
     @Override
     protected void getStats(){
+        trackName = "Dream Wistfully";
+
         for (Participant participant : participants){
             int groupCode = Integer.parseInt(participant.getGroup());
             
