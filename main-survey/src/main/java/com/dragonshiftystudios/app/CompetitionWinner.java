@@ -5,17 +5,21 @@ public class CompetitionWinner {
     public void getCompetitionWinner(LinkedList<Participant> participants, LinkedList<TrackStats> tracks){
         double participantTotalWinner = 0;
         String participantID = "";
+        String participantProl = "";
         int trackWinnerScore = 0;
 
         double secondClosestTotal = 0;
+        String secondParticipantProl = "";
         String secondClosestID = "";
         int secondClosestTrackScore = 0;
 
         double thirdClosestTotal = 0;
+        String thirdParticipantProl = "";
         String thirdClosestID = "";
         int thirdClosestTrackScore = 0;
 
         double fourthClosestTotal = 0;
+        String fourthdParticipantProl = "";
         String fourthClosestID = "";
         int fourthClosestTrackScore = 0;
 
@@ -124,22 +128,27 @@ public class CompetitionWinner {
 
             double difference = holdingTotal > ratingPayTotal ? holdingTotal - ratingPayTotal : ratingPayTotal - holdingTotal;
 
+
             if (difference <= currentDifference){
                 currentDifference = difference;
 
                 fourthClosestID = thirdClosestID;
                 fourthClosestTotal = thirdClosestTotal;
                 fourthClosestTrackScore = thirdClosestTrackScore;
+                fourthdParticipantProl = thirdParticipantProl;
 
                 thirdClosestID = secondClosestID;
                 thirdClosestTotal = secondClosestTotal;
                 thirdClosestTrackScore = secondClosestTrackScore;
+                thirdParticipantProl = secondParticipantProl;
 
                 secondClosestID = participantID;
                 secondClosestTotal = participantTotalWinner;
                 secondClosestTrackScore = trackWinnerScore;
+                secondParticipantProl = participantProl;
 
                 participantID = participant.getResponseId();
+                participantProl = participant.getProl();
                 participantTotalWinner = holdingTotal;
                 trackWinnerScore = trackPrefScore;
             }
@@ -147,21 +156,25 @@ public class CompetitionWinner {
         System.out.println("Participants rating and pay total: " + ratingPayTotal);
         System.out.println("Closest total: " + participantTotalWinner);
         System.out.println("Closest ID: " + participantID);
+        System.out.println("Closest Prol: " + participantProl);
         System.out.println("Tracks correctly guessed: " + trackWinnerScore + "/5");
 
         System.out.println("");
 
         System.out.println("Second closest total: " + secondClosestTotal);
         System.out.println("Second closest ID: " + secondClosestID);
+        System.out.println("Closest Prol: " + secondParticipantProl);
         System.out.println("Tracks correctly guessed: " + secondClosestTrackScore + "/5");
         System.out.println("");
         System.out.println("Third closest total: " + thirdClosestTotal);
         System.out.println("Third closest ID: " + thirdClosestID);
+        System.out.println("Closest Prol: " + thirdParticipantProl);
         System.out.println("Tracks correctly guessed: " + thirdClosestTrackScore + "/5");
         System.out.println("");
 
         System.out.println("fourth closest total: " + fourthClosestTotal);
         System.out.println("fourth closest ID: " + fourthClosestID);
+        System.out.println("Closest Prol: " + fourthdParticipantProl);
         System.out.println("Tracks correctly guessed: " + fourthClosestTrackScore + "/5");
 
         // System.out.println("Clearly - Male: " + clearlyMalePref + " Female: " + clearlyFemalePref);

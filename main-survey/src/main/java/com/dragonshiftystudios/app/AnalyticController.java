@@ -4,6 +4,7 @@ import java.util.LinkedList;
 public class AnalyticController {
     CSVConverter csvConverter = new CSVConverter();
     OutputToText outputToText = new OutputToText();
+    PrintStats printStats = new PrintStats();
     CompetitionWinner competitionWinner = new CompetitionWinner();
     TrackStats clearly = new Clearly();
     TrackStats myOwnExpectations = new MyOwnExpectations();
@@ -20,12 +21,11 @@ public class AnalyticController {
         getParticipantsList();
         getTrackStats();
         testAverages();
-        competitionWinner.getCompetitionWinner(participants, tracks);
+        // competitionWinner.getCompetitionWinner(participants, tracks);
+        printStats.startPrint(participants, tracks);
+        // tester();
     }
 
-    public void testRating(){
-        
-    }
     
     private void getParticipantsList() {
         participants = csvConverter.populateParticipantList();
@@ -44,6 +44,34 @@ public class AnalyticController {
         for (TrackStats track : tracks){
             track.Gather(participants);
         }
+    }
+
+    private void testTotals(){
+        for (TrackStats track : tracks){
+            int mp = track.malePartipantTotal;
+            int fp = track.femaleParticipantTotal;
+            int nb = track.nBParticipantTotal;
+            int up = track.uParticipantTotal;
+
+            int ml = track.maleLedTotal;
+            int fl = track.femaleLedTotal;
+            System.out.println(mp + fp + nb + up + " " + track.getTrackName());
+        }
+    }
+
+    private void tester(){
+        int otherM = 0;
+        int otherF = 0;
+        for (Participant participant : participants){
+            if (participant.getmPMOE1() != null)otherM += (participant.getmPMOE1().equals("1")) ? 1 : 0;
+            if (participant.getmPMOE1() != null)otherF += (participant.getmPMOE1().equals("0")) ? 1 : 0;
+            if (participant.getfPMOE1() != null)  otherM += (participant.getfPMOE1().equals("1")) ? 1 : 0;
+            if (participant.getfPMOE1() != null)  otherF += (participant.getfPMOE1().equals("0")) ? 1 : 0;
+
+            System.out.println(participant.getfPF1());
+        }
+
+        // System.out.println(otherM + " " + otherF);
     }
 
     private void testAverages(){
