@@ -192,10 +192,10 @@ public abstract class TrackStats implements IGather {
             otherRatingML = (double) otherRatingTotalML / maleLedTotal;
             payML = (double) payTotalML / maleLedTotal;
             otherPayML = (double) otherPayTotalML / maleLedTotal;
-            prefMaleMeanML = (double) malePreferredML / maleLedTotal;
-            otherPrefMaleMeanML = (double) maleOtherPreferredML / maleLedTotal;
-            prefFemaleMeanML = (double) femalePreferredML / maleLedTotal;
-            otherPrefFemaleMeanML = (double) femaleOtherPreferredML / maleLedTotal;
+            prefMaleMeanML = ((double) malePreferredML / maleLedTotal) * 100;
+            otherPrefMaleMeanML = ((double) maleOtherPreferredML / maleLedTotal) * 100;
+            prefFemaleMeanML = ((double) femalePreferredML / maleLedTotal) * 100;
+            otherPrefFemaleMeanML = ((double) femaleOtherPreferredML / maleLedTotal) * 100;
         }
     }
 
@@ -207,10 +207,10 @@ public abstract class TrackStats implements IGather {
             otherRatingFL = (double) otherRatingTotalFL / femaleLedTotal;
             payFL = (double) payTotalFL / femaleLedTotal;
             otherPayFL = (double) otherPayTotalFL / femaleLedTotal;
-            prefMaleMeanFL = (double) malePreferredFL / femaleLedTotal;
-            otherPrefMaleMeanFL = (double) maleOtherPreferredFL / femaleLedTotal;
-            prefFemaleMeanFL = (double) femalePreferredFL / femaleLedTotal;
-            otherPrefFemaleMeanFL = (double) femaleOtherPreferredFL / femaleLedTotal;
+            prefMaleMeanFL = ((double) malePreferredFL / femaleLedTotal) * 100;
+            otherPrefMaleMeanFL = ((double) maleOtherPreferredFL / femaleLedTotal) * 100;
+            prefFemaleMeanFL = ((double) femalePreferredFL / femaleLedTotal) * 100;
+            otherPrefFemaleMeanFL = ((double) femaleOtherPreferredFL / femaleLedTotal) * 100;
         }
     }
 
@@ -222,10 +222,10 @@ public abstract class TrackStats implements IGather {
             otherRatingMP = (double) otherRatingTotalMP / malePartipantTotal;
             payMP = (double) payTotalMP / malePartipantTotal;
             otherPayMP = (double) otherPayTotalMP / malePartipantTotal;
-            prefMaleMeanMP = (double) malePreferredMP / malePartipantTotal;
-            otherPrefMaleMeanMP = (double) maleOtherPreferredMP / malePartipantTotal;
-            prefFemaleMeanMP = (double) femalePreferredMP / malePartipantTotal;
-            otherPrefFemaleMeanMP  = (double) femaleOtherPreferredMP / malePartipantTotal;
+            prefMaleMeanMP = ((double) malePreferredMP / malePartipantTotal) * 100;
+            otherPrefMaleMeanMP = ((double) maleOtherPreferredMP / malePartipantTotal) * 100;
+            prefFemaleMeanMP = ((double) femalePreferredMP / malePartipantTotal) * 100;
+            otherPrefFemaleMeanMP  = ((double) femaleOtherPreferredMP / malePartipantTotal) * 100;
         }
     }
 
@@ -237,10 +237,10 @@ public abstract class TrackStats implements IGather {
             otherRatingFP = (double) otherRatingTotalFP / femaleParticipantTotal;
             payFP = (double) payTotalFP / femaleParticipantTotal;
             otherPayFP = (double) otherPayTotalFP / femaleParticipantTotal;
-            prefMaleMeanFP = (double) malePreferredFP / femaleParticipantTotal;
-            otherPrefMaleMeanFP  = (double) maleOtherPreferredFL / femaleParticipantTotal;
-            prefFemaleMeanFP = (double) femalePreferredFP / femaleParticipantTotal;
-            otherPrefFemaleMeanFP = (double) femaleOtherPreferredFP / femaleParticipantTotal;
+            prefMaleMeanFP = ((double) malePreferredFP / femaleParticipantTotal) * 100;
+            otherPrefMaleMeanFP  = ((double) maleOtherPreferredFL / femaleParticipantTotal) * 100;
+            prefFemaleMeanFP = ((double) femalePreferredFP / femaleParticipantTotal) * 100;
+            otherPrefFemaleMeanFP = ((double) femaleOtherPreferredFP / femaleParticipantTotal) * 100;
         }
     }
 
@@ -252,10 +252,10 @@ public abstract class TrackStats implements IGather {
             otherRatingNBP = (double) otherRatingTotalNBP / nBParticipantTotal;
             payNBP = (double) payTotalNBP / nBParticipantTotal;
             otherPayNBP = (double) otherPayTotalNBP / nBParticipantTotal;
-            prefMaleMeanNBP = (double) malePreferredNBP / nBParticipantTotal;
-            otherPrefMaleMeanNBP = (double) maleOtherPreferredNBP / nBParticipantTotal;
-            prefFemaleMeanNBP = (double) femalePreferredNBP / nBParticipantTotal;
-            otherPrefFemaleMeanNBP = (double) femaleOtherPreferredNBP / nBParticipantTotal;
+            prefMaleMeanNBP = ((double) malePreferredNBP / nBParticipantTotal) * 100;
+            otherPrefMaleMeanNBP = ((double) maleOtherPreferredNBP / nBParticipantTotal) * 100;
+            prefFemaleMeanNBP = ((double) femalePreferredNBP / nBParticipantTotal) * 100;
+            otherPrefFemaleMeanNBP = ((double) femaleOtherPreferredNBP / nBParticipantTotal) * 100;
         }
     }
 
@@ -267,10 +267,10 @@ public abstract class TrackStats implements IGather {
             otherRatingUP = (double) otherRatingTotalUP / uParticipantTotal;
             payUP = (double) payTotalUP / uParticipantTotal;
             otherPayUP = (double) otherPayTotalUP / uParticipantTotal;
-            prefMaleMeanUP = (double) malePreferredUP / uParticipantTotal;
-            otherPrefMaleMeanUP = (double) maleOtherPreferredUP / uParticipantTotal;
-            prefFemaleMeanUP = (double) femalePreferredUP / uParticipantTotal;
-            otherPrefFemaleMeanUP = (double) femaleOtherPreferredUP / uParticipantTotal;
+            prefMaleMeanUP = ((double) malePreferredUP / uParticipantTotal) * 100;
+            otherPrefMaleMeanUP = ((double) maleOtherPreferredUP / uParticipantTotal) * 100;
+            prefFemaleMeanUP = ((double) femalePreferredUP / uParticipantTotal) * 100;
+            otherPrefFemaleMeanUP = ((double) femaleOtherPreferredUP / uParticipantTotal) * 100;
         }
     }
 
@@ -285,13 +285,12 @@ public abstract class TrackStats implements IGather {
             otherRating = ((otherRatingML * maleLedTotal) + (otherRatingFL * femaleLedTotal)) / totalLed;
             pay = ((payML * maleLedTotal) + (payFL * femaleLedTotal)) / totalLed;
             otherPay = ((otherPayML * maleLedTotal) + (otherPayFL * femaleLedTotal)) / totalLed;
-            prefMaleMean = malePreferred / totalLed;
-            prefFemaleMean = femalePreferred / totalLed;
-            otherPrefMaleMean = maleOtherPreferred / totalLed;
-            otherPrefFemaleMean = femaleOtherPreferred / totalLed;
+            prefMaleMean = (malePreferred / totalLed) * 100;
+            prefFemaleMean = (femalePreferred / totalLed) * 100;
+            otherPrefMaleMean = (maleOtherPreferred / totalLed) * 100;
+            otherPrefFemaleMean = (femaleOtherPreferred / totalLed) * 100;
         }
     }
-
 
     public double getRating(){
         return rating;

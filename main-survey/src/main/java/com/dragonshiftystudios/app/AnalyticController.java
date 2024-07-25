@@ -22,7 +22,7 @@ public class AnalyticController {
         getTrackStats();
         testAverages();
         // competitionWinner.getCompetitionWinner(participants, tracks);
-        printStats.startPrint(participants, tracks);
+        // printStats.startPrint(participants, tracks);
         // tester();
     }
 
@@ -60,18 +60,7 @@ public class AnalyticController {
     }
 
     private void tester(){
-        int otherM = 0;
-        int otherF = 0;
-        for (Participant participant : participants){
-            if (participant.getmPMOE1() != null)otherM += (participant.getmPMOE1().equals("1")) ? 1 : 0;
-            if (participant.getmPMOE1() != null)otherF += (participant.getmPMOE1().equals("0")) ? 1 : 0;
-            if (participant.getfPMOE1() != null)  otherM += (participant.getfPMOE1().equals("1")) ? 1 : 0;
-            if (participant.getfPMOE1() != null)  otherF += (participant.getfPMOE1().equals("0")) ? 1 : 0;
-
-            System.out.println(participant.getfPF1());
-        }
-
-        // System.out.println(otherM + " " + otherF);
+        
     }
 
     private void testAverages(){

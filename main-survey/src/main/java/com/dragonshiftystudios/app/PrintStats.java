@@ -13,10 +13,16 @@ public class PrintStats {
         this.participants = participants;
         this.tracks = tracks;
         printTotals();
+        printMaleLed();
+        printFemaleLed();
+        printMaleParticipant();
+        printFemaleParticipant();
+        printNBParticipant();
+        printUndeclaredParticipant();
     }
 
     private void printTotals(){
-        String fileName = "Totals.txt";
+        String fileName = "Total Participants.txt";
         outputToText.setFileName(fileName);
 
         outputToText.openTextFile();
@@ -24,22 +30,23 @@ public class PrintStats {
         for (TrackStats track : tracks){
             outputToText.writeToText(track.getTrackName());
             outputToText.writeToText("");
-            printLine("Venue", track.venueSize, track.participantsTotal);
-            printLine("Festival", track.festivalPercent, track.participantsTotal);
-            printLine("Rating", track.rating, track.participantsTotal);
-            printLine("Other Rating", track.otherRating, track.participantsTotal);
-            printLine("Pay", track.pay, track.participantsTotal);
-            printLine("Other Pay", track.otherPay, track.participantsTotal);
+            outputToText.writeToText("Participants: " + track.participantsTotal);
+            printLine("Venue", track.venueSize);
+            printLine("Festival", track.festivalPercent);
+            printLine("Rating", track.rating);
+            printLine("Other Rating", track.otherRating);
+            printLine("Pay", track.pay);
+            printLine("Other Pay", track.otherPay);
             outputToText.writeToText("");
 
             if (track.getTrackName().equals("Dream Wistfully")) continue;
             if (track.getTrackName().equals("Rising")) continue;
             if (track.getTrackName().equals("Triggered")) continue;
 
-            printLine("Male Preffered", track.malePreferred, track.participantsTotal);
-            printLine("Female Preffered", track.femalePreferred, track.participantsTotal);
-            printLine("Others Male", track.maleOtherPreferred, track.participantsTotal);
-            printLine("Others Female", track.femaleOtherPreferred, track.participantsTotal);
+            printLinePref("Male Preffered", track.malePreferred, track.prefMaleMean);
+            printLinePref("Female Preffered", track.femalePreferred, track.prefFemaleMean);
+            printLinePref("Others Male", track.maleOtherPreferred, track.otherPrefMaleMean);
+            printLinePref("Others Female", track.femaleOtherPreferred, track.otherPrefFemaleMean);
 
             outputToText.writeToText("");
             outputToText.writeToText("");
@@ -48,15 +55,218 @@ public class PrintStats {
         outputToText.closeTextFile();
     }
 
-    private void printLine(String element, double stat, int total){
-        // double percent = ((double) stat / total) * 100;
-        String formattedStat = String.format("%.2f", stat);
-        // String formattedPercent = String.format("%.2f", percent);
-        
-        // String line = String.format("%s: %s %d %s%%", element, formattedStat, total, formattedPercent);
-        // outputToText.writeToText(line);
+    private void printMaleLed(){
+        String fileName = "Male Led Participants.txt";
+        outputToText.setFileName(fileName);
 
-        outputToText.writeToText(element + " " + formattedStat+ " " + total);
+        outputToText.openTextFile();
+        
+        for (TrackStats track : tracks){
+            outputToText.writeToText(track.getTrackName());
+            outputToText.writeToText("");
+            outputToText.writeToText("Participants: " + track.maleLedTotal);
+            printLine("Venue", track.venueSizeML);
+            printLine("Festival", track.festivalPercentML);
+            printLine("Rating", track.ratingML);
+            printLine("Other Rating", track.otherRatingML);
+            printLine("Pay", track.payML);
+            printLine("Other Pay", track.otherPayML);
+            outputToText.writeToText("");
+
+            if (track.getTrackName().equals("Dream Wistfully")) continue;
+            if (track.getTrackName().equals("Rising")) continue;
+            if (track.getTrackName().equals("Triggered")) continue;
+
+            printLinePref("Male Preffered", track.malePreferredML, track.prefMaleMeanML);
+            printLinePref("Female Preffered", track.femalePreferredML, track.prefFemaleMeanML);
+            printLinePref("Others Male", track.maleOtherPreferredML, track.otherPrefMaleMeanML);
+            printLinePref("Others Female", track.femaleOtherPreferredML, track.otherPrefFemaleMeanML);
+
+            outputToText.writeToText("");
+            outputToText.writeToText("");
+        }
+
+        outputToText.closeTextFile();
+    }
+
+    private void printFemaleLed(){
+        String fileName = "Female Led Participants.txt";
+        outputToText.setFileName(fileName);
+
+        outputToText.openTextFile();
+        
+        for (TrackStats track : tracks){
+            outputToText.writeToText(track.getTrackName());
+            outputToText.writeToText("");
+            outputToText.writeToText("Participants: " + track.femaleLedTotal);
+            printLine("Venue", track.venueSizeFL);
+            printLine("Festival", track.festivalPercentFL);
+            printLine("Rating", track.ratingFL);
+            printLine("Other Rating", track.otherRatingFL);
+            printLine("Pay", track.payFL);
+            printLine("Other Pay", track.otherPayFL);
+            outputToText.writeToText("");
+
+            if (track.getTrackName().equals("Dream Wistfully")) continue;
+            if (track.getTrackName().equals("Rising")) continue;
+            if (track.getTrackName().equals("Triggered")) continue;
+
+            printLinePref("Male Preffered", track.malePreferredFL, track.prefMaleMeanFL);
+            printLinePref("Female Preffered", track.femalePreferredFL, track.prefFemaleMeanFL);
+            printLinePref("Others Male", track.maleOtherPreferredFL, track.otherPrefMaleMeanFL);
+            printLinePref("Others Female", track.femaleOtherPreferredFL, track.otherPrefFemaleMeanFL);
+
+            outputToText.writeToText("");
+            outputToText.writeToText("");
+        }
+
+        outputToText.closeTextFile();
+    }
+
+    private void printMaleParticipant(){
+        String fileName = "Male Participants.txt";
+        outputToText.setFileName(fileName);
+
+        outputToText.openTextFile();
+        
+        for (TrackStats track : tracks){
+            outputToText.writeToText(track.getTrackName());
+            outputToText.writeToText("");
+            outputToText.writeToText("Participants: " + track.malePartipantTotal);
+            printLine("Venue", track.venueSizeMP);
+            printLine("Festival", track.festivalPercentMP);
+            printLine("Rating", track.ratingMP);
+            printLine("Other Rating", track.otherRatingMP);
+            printLine("Pay", track.payMP);
+            printLine("Other Pay", track.otherPayMP);
+            outputToText.writeToText("");
+
+            if (track.getTrackName().equals("Dream Wistfully")) continue;
+            if (track.getTrackName().equals("Rising")) continue;
+            if (track.getTrackName().equals("Triggered")) continue;
+
+            printLinePref("Male Preffered", track.malePreferredMP, track.prefMaleMeanMP);
+            printLinePref("Female Preffered", track.femalePreferredMP, track.prefFemaleMeanMP);
+            printLinePref("Others Male", track.maleOtherPreferredMP, track.otherPrefMaleMeanMP);
+            printLinePref("Others Female", track.femaleOtherPreferredMP, track.otherPrefFemaleMeanMP);
+
+            outputToText.writeToText("");
+            outputToText.writeToText("");
+        }
+
+        outputToText.closeTextFile();
+    }
+
+    private void printFemaleParticipant(){
+        String fileName = "Female Participants.txt";
+        outputToText.setFileName(fileName);
+
+        outputToText.openTextFile();
+        
+        for (TrackStats track : tracks){
+            outputToText.writeToText(track.getTrackName());
+            outputToText.writeToText("");
+            outputToText.writeToText("Participants: " + track.femaleParticipantTotal);
+            printLine("Venue", track.venueSizeFP);
+            printLine("Festival", track.festivalPercentFP);
+            printLine("Rating", track.ratingFP);
+            printLine("Other Rating", track.otherRatingFP);
+            printLine("Pay", track.payFP);
+            printLine("Other Pay", track.otherPayFP);
+            outputToText.writeToText("");
+
+            if (track.getTrackName().equals("Dream Wistfully")) continue;
+            if (track.getTrackName().equals("Rising")) continue;
+            if (track.getTrackName().equals("Triggered")) continue;
+
+            printLinePref("Male Preffered", track.malePreferredFP, track.prefMaleMeanFP);
+            printLinePref("Female Preffered", track.femalePreferredFP, track.prefFemaleMeanFP);
+            printLinePref("Others Male", track.maleOtherPreferredFP, track.otherPrefMaleMeanFP);
+            printLinePref("Others Female", track.femaleOtherPreferredFP, track.otherPrefFemaleMeanFP);
+
+            outputToText.writeToText("");
+            outputToText.writeToText("");
+        }
+
+        outputToText.closeTextFile();
+    }
+
+    private void printNBParticipant(){
+        String fileName = "Non-binary Participants.txt";
+        outputToText.setFileName(fileName);
+
+        outputToText.openTextFile();
+        
+        for (TrackStats track : tracks){
+            outputToText.writeToText(track.getTrackName());
+            outputToText.writeToText("");
+            outputToText.writeToText("Participants: " + track.nBParticipantTotal);
+            printLine("Venue", track.venueSizeNBP);
+            printLine("Festival", track.festivalPercentNBP);
+            printLine("Rating", track.ratingNBP);
+            printLine("Other Rating", track.otherRatingNBP);
+            printLine("Pay", track.payNBP);
+            printLine("Other Pay", track.otherPayNBP);
+            outputToText.writeToText("");
+
+            if (track.getTrackName().equals("Dream Wistfully")) continue;
+            if (track.getTrackName().equals("Rising")) continue;
+            if (track.getTrackName().equals("Triggered")) continue;
+
+            printLinePref("Male Preffered", track.malePreferredNBP, track.prefMaleMeanNBP);
+            printLinePref("Female Preffered", track.femalePreferredNBP, track.prefFemaleMeanNBP);
+            printLinePref("Others Male", track.maleOtherPreferredNBP, track.otherPrefMaleMeanNBP);
+            printLinePref("Others Female", track.femaleOtherPreferredNBP, track.otherPrefFemaleMeanNBP);
+
+            outputToText.writeToText("");
+            outputToText.writeToText("");
+        }
+
+        outputToText.closeTextFile();
+    }
+
+    private void printUndeclaredParticipant(){
+        String fileName = "Undeclared Participants.txt";
+        outputToText.setFileName(fileName);
+
+        outputToText.openTextFile();
+        
+        for (TrackStats track : tracks){
+            outputToText.writeToText(track.getTrackName());
+            outputToText.writeToText("");
+            outputToText.writeToText("Participants: " + track.uParticipantTotal);
+            printLine("Venue", track.venueSizeUP);
+            printLine("Festival", track.festivalPercentUP);
+            printLine("Rating", track.ratingUP);
+            printLine("Other Rating", track.otherRatingUP);
+            printLine("Pay", track.payUP);
+            printLine("Other Pay", track.otherPayUP);
+            outputToText.writeToText("");
+
+            if (track.getTrackName().equals("Dream Wistfully")) continue;
+            if (track.getTrackName().equals("Rising")) continue;
+            if (track.getTrackName().equals("Triggered")) continue;
+
+            printLinePref("Male Preffered", track.malePreferredUP, track.prefMaleMeanUP);
+            printLinePref("Female Preffered", track.femalePreferredUP, track.prefFemaleMeanUP);
+            printLinePref("Others Male", track.maleOtherPreferredUP, track.otherPrefMaleMeanUP);
+            printLinePref("Others Female", track.femaleOtherPreferredUP, track.otherPrefFemaleMeanUP);
+
+            outputToText.writeToText("");
+            outputToText.writeToText("");
+        }
+
+        outputToText.closeTextFile();
+    }
+
+    private void printLine(String element, double stat){
+        String formattedStat = String.format("%.2f", stat);
+        outputToText.writeToText(element + " " + formattedStat);
+    }
+
+    private void printLinePref(String element, double stat, double percent){
+        String formattedPercent = String.format("%.2f%%", percent);
+        outputToText.writeToText(element + " " + stat + " " + formattedPercent);
     }
 }
 
