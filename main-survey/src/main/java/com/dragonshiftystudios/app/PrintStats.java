@@ -1,8 +1,6 @@
 package com.dragonshiftystudios.app;
 import java.util.LinkedList;
 
-import javafx.scene.media.Track;
-
 public class PrintStats {
     OutputToText outputToText = new OutputToText();
     LinkedList<Participant> participants = new LinkedList<>();

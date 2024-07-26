@@ -6,6 +6,7 @@ public class AnalyticController {
     OutputToText outputToText = new OutputToText();
     PrintStats printStats = new PrintStats();
     CompetitionWinner competitionWinner = new CompetitionWinner();
+    AssessPay assessPay = new AssessPay();
     TrackStats clearly = new Clearly();
     TrackStats myOwnExpectations = new MyOwnExpectations();
     TrackStats fine = new Fine();
@@ -20,10 +21,11 @@ public class AnalyticController {
     public void go(){
         getParticipantsList();
         getTrackStats();
-        testAverages();
+        // testAverages();
         // competitionWinner.getCompetitionWinner(participants, tracks);
         // printStats.startPrint(participants, tracks);
         // tester();
+        assessPay.getGenderedPay(participants);
     }
 
     
